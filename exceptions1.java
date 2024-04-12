@@ -1,4 +1,4 @@
-public class extentions1 {
+public class exceptions1 {
     public static void main(String[] args) {
         // if an error is occur, we can use Try catch to catch the error and execute some code to hande it.
         try{
