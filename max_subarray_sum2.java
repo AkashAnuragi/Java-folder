@@ -1,4 +1,5 @@
 import java.util.*;
+//prefix sum
 public class max_subarray_sum2 {
     public static void maxSubarraySum2(int number[]) {
         System.out.println("The arrays of sub array are : ");
