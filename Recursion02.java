@@ -1,3 +1,5 @@
+// Print number in Increasing Order using Recursion.
+
 public class Recursion02 {
     public static void printInc( int n){
         if (n == 10) {
