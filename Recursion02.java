@@ -1,4 +1,4 @@
-// Print number in Increasing Order suing Recursion.
+// Print number in Increasing Order using Recursion.
 
 public class Recursion02 {
     public static void printInc( int n){
