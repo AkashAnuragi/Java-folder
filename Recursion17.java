@@ -11,7 +11,7 @@ public class Recursion17 {
         return length(str.substring(1)) + 1;
     }
     public static void main(String[] args) {
-        String str = "abcd";
+        String str = "abcde";
         System.out.println(length(str));
     }
 }
