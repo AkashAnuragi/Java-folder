@@ -86,6 +86,6 @@ public class LinkedList00 {
         li.addLast(4);
         li.add(2, 5);
         li.print();
-        System.out.println( "The size of list is : " + li.size);
+        System.out.println( "The size of list is: " + li.size);
     }
 }
