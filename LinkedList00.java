@@ -74,6 +74,21 @@ public class LinkedList00 {
         }
         System.out.println("null");
     }
+
+    public int removeFirst(){
+        if (size == 0) {
+            System.out.println("LL is Empty.");
+        }else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+        int val = head.data;
+        head = head.next;
+        size--;
+        return val;
+    }
     public static void main(String[] args) {
         LinkedList00 li = new LinkedList00();
         li.print();
@@ -86,6 +101,8 @@ public class LinkedList00 {
         li.addLast(4);
         li.add(2, 5);
         li.print();
-        System.out.println( "The size of list is: " + li.size);
+        // System.out.println( "The size of list is: " + li.size);
+        li.removeFirst();
+        li.print();
     }
 }
