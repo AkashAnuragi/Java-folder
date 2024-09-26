@@ -78,6 +78,7 @@ public class LinkedList00 {
     public int removeFirst(){
         if (size == 0) {
             System.out.println("LL is Empty.");
+            return Integer.MIN_VALUE;
         }else if(size == 1){
             int val = head.data;
             head = tail = null;
@@ -86,6 +87,30 @@ public class LinkedList00 {
         }
         int val = head.data;
         head = head.next;
+        size--;
+        return val;
+    }
+
+    public int removeLast(){
+        if (size == 0) {
+            System.out.println("LL is Empty.");
+            return Integer.MIN_VALUE;
+        }else if(size == 1){
+            int val = head.data;
+            head = tail = null;
+            size = 0;
+            return val;
+        }
+
+        //prev value -> size - 2.
+        Node prev = head;
+        for(int i =0; i<size-2;i++){
+            prev = prev.next;
+        }
+
+        int val = head.next.data;  // tail.data
+        prev.next = null;
+        tail = prev;
         size--;
         return val;
     }
@@ -104,5 +129,8 @@ public class LinkedList00 {
         // System.out.println( "The size of list is: " + li.size);
         li.removeFirst();
         li.print();
+        li.removeLast();
+        li.print();
+        System.out.println(li.size);
     }
 }
