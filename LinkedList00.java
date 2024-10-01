@@ -95,11 +95,11 @@ public class LinkedList00 {
         if (size == 0) {
             System.out.println("LL is Empty.");
             return Integer.MIN_VALUE;
-        }else if(size == 1){
+         }else if(size == 1){
             int val = head.data;
             head = tail = null;
             size = 0;
-            return val;
+          return val;
         }
 
         //prev value -> size - 2.
@@ -113,6 +113,21 @@ public class LinkedList00 {
         tail = prev;
         size--;
         return val;
+    }
+    public int itrSearch(int key){
+        Node temp = head;
+        int i = 0;
+        while(temp != null){
+            if( temp.data == key ) {// key found
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+
+        // Not found key 
+        return -1;
+       
     }
     public static void main(String[] args) {
         LinkedList00 li = new LinkedList00();
@@ -131,6 +146,8 @@ public class LinkedList00 {
         li.print();
         li.removeLast();
         li.print();
-        System.out.println(li.size);
+        // System.out.println(li.size);
+        System.out.println(li.itrSearch(3));
+        System.out.println(li.itrSearch(10));
     }
 }
