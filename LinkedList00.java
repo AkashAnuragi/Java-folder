@@ -1,3 +1,5 @@
+import org.w3c.dom.Node;
+
 public class LinkedList00 {
     public static class Node{
         int data ;
@@ -43,23 +45,37 @@ public class LinkedList00 {
         tail = newNode;
     }
 
-    public void add(int indx, int data){
+    public void add(int indx, int data) {
+        if (indx < 0) {
+            System.out.println("Invalid index.");
+            return;
+        }
 
         if (indx == 0) {
             addFirst(data);
             return;
         }
-        Node newNode  = new Node(data);
-        size++;
+
+        Node newNode = new Node(data);
         Node temp = head;
         int i = 0;
-        while (i < indx -1) {
+
+        while (i < indx - 1 && temp != null) {
             temp = temp.next;
             i++;
         }
-         // When i == index  temp -> prev
-         newNode.next = temp.next;
-         temp.next = newNode;
+
+        if (temp == null) {
+            System.out.println("Index out of bounds.");
+            return;
+        }
+
+        newNode.next = temp.next;
+        temp.next = newNode;
+
+        if (newNode.next == null) {
+            tail = newNode; // Update tail if new node is added at the end
+        }
     }
 
     public void print(){
@@ -163,6 +179,34 @@ public class LinkedList00 {
         }
         head =prev;
     }
+
+    // remove Nth node 
+    public void deleteNthfromEnd(int n){
+        //calculate size 
+        int sz = 0;
+        Node temp = head;
+        while(temp != null){
+            temp = temp.next;
+            sz++;
+        }
+
+         if(n == sz){
+            head = head.next; // remove first
+            return; 
+         }
+
+         // sz - n
+         int i = 1;
+         int itoFind = sz - n;
+         Node prev = head;
+         while(i < itoFind){
+            prev = prev.next;
+            i++;
+         }
+
+         prev.next = prev.next.next;
+         return;
+    }
     public static void main(String[] args) {
         LinkedList00 li = new LinkedList00();
         li.print();
@@ -174,19 +218,22 @@ public class LinkedList00 {
         li.print();
         li.addLast(4);
         li.add(2, 5);
+        li.add(-2, 9);
+        li.add(9, 19);
         li.print();
         // System.out.println( "The size of list is: " + li.size);
-        li.removeFirst();
-        li.print();
-        li.removeLast();
-        li.print();
+        // li.removeFirst();
+        // li.print();
+        // li.removeLast();
+        // li.print();
         // System.out.println(li.size);
         // System.out.println(li.itrSearch(3));
         // System.out.println(li.itrSearch(10));
 
         // System.out.println(li.recSearch(3));
         // System.out.println(li.recSearch(10));
-        li.reverse();
+        // li.reverse();
+        li.deleteNthfromEnd(3);
         li.print();
     }
 }
