@@ -207,20 +207,63 @@ public class LinkedList00 {
          prev.next = prev.next.next;
          return;
     }
+    //  slow-fast approach
+    public Node findMid(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next; //+1
+            fast = fast.next.next; //+2
+        }
+        return slow; // slow is my midNode
+    }
+
+    public boolean checkPalindrome(){
+        if (head == null ||head.next == null) {
+            return  true;
+        }
+        // step 1 -> find mid
+        Node midNode = findMid(head);
+        // step 2 -> reverse 2nd half
+        Node prev = null;
+        Node curr = midNode;
+        Node next;
+
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next; 
+        }
+
+        Node right = prev; // right half head
+        Node left = head;
+
+        // step 3 
+        while (right != null) {
+            if(left.data != right.data ){
+                return false;
+            }
+            left = left.next;
+            right = right.next;
+        }
+        return true;
+    }
     public static void main(String[] args) {
         LinkedList00 li = new LinkedList00();
-        li.print();
-        li.addFirst(2);
-        li.print();
-        li.addFirst(1);
-        li.print();
-        li.addLast(3);
-        li.print();
-        li.addLast(4);
-        li.add(2, 5);
-        li.add(-2, 9);
-        li.add(9, 19);
-        li.print();
+        // li.print();
+        // li.addFirst(2);
+        // li.print();
+        // li.addFirst(1);
+        // li.print();
+        // li.addLast(3);
+        // li.print();
+        // li.addLast(4);
+        // li.add(2, 5);
+        // li.add(-2, 9);
+        // li.add(9, 19);
+        // li.print();
         // System.out.println( "The size of list is: " + li.size);
         // li.removeFirst();
         // li.print();
@@ -233,7 +276,12 @@ public class LinkedList00 {
         // System.out.println(li.recSearch(3));
         // System.out.println(li.recSearch(10));
         // li.reverse();
-        li.deleteNthfromEnd(3);
+        // li.deleteNthfromEnd(3);
+
+        li.addFirst(2);
+        li.addFirst(7);
+        li.addFirst(2);
         li.print();
+       System.out.println( li.checkPalindrome());
     }
 }
