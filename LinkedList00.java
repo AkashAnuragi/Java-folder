@@ -219,6 +219,8 @@ public class LinkedList00 {
         return slow; // slow is my midNode
     }
 
+
+    // check LL is a Palindrome or not
     public boolean checkPalindrome(){
         if (head == null ||head.next == null) {
             return  true;
@@ -250,8 +252,24 @@ public class LinkedList00 {
         }
         return true;
     }
+
+
+    //  To find the cycle in Linked List 
+    public static boolean isCycle(){
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next; // +1
+            fast = fast.next.next; //+2
+            if(slow == fast){
+                return true;
+            }
+        }
+
+        return false;
+    }
     public static void main(String[] args) {
-        LinkedList00 li = new LinkedList00();
+        // LinkedList00 li = new LinkedList00();
         // li.print();
         // li.addFirst(2);
         // li.print();
@@ -278,10 +296,20 @@ public class LinkedList00 {
         // li.reverse();
         // li.deleteNthfromEnd(3);
 
-        li.addFirst(2);
-        li.addFirst(7);
-        li.addFirst(2);
-        li.print();
-       System.out.println( li.checkPalindrome());
+    //     li.addFirst(2);
+    //     li.addFirst(7);
+    //     li.addFirst(2);
+    //     li.print();
+    //    System.out.println( li.checkPalindrome());
+
+
+    //  making cycle linked list
+    head = new Node(1);
+    head.next = new Node(2);
+    head.next.next = new Node(3);
+    head.next.next.next = new Node(4);
+    head.next.next.next.next = head;
+    //  1->2->3->->4->1
+    System.out.println(isCycle());
     }
 }
