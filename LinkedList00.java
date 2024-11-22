@@ -1,4 +1,4 @@
-import org.w3c.dom.Node;
+import  java.util.*;
 
 public class LinkedList00 {
     public static class Node{
@@ -268,23 +268,55 @@ public class LinkedList00 {
 
         return false;
     }
+
+    // Remove Cycle in LinkedList
+    public static void removeCycle() {
+        Node slow = head;
+        Node fast = head;
+        boolean cycle = false;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (fast == slow) {
+                cycle = true;
+                break;                
+            }
+        }
+
+        if (cycle == false) {
+            return;            
+        }
+
+        // find meeting point
+        slow = head;
+        Node prev = null;  // last node
+        while (slow != fast) {
+            prev = fast;
+            slow = slow.next;
+            fast = fast.next;            
+        }
+
+        // remove last node , last.next = null
+        prev.next = null;
+    }
     public static void main(String[] args) {
-        // LinkedList00 li = new LinkedList00();
-        // li.print();
-        // li.addFirst(2);
-        // li.print();
-        // li.addFirst(1);
-        // li.print();
-        // li.addLast(3);
-        // li.print();
-        // li.addLast(4);
-        // li.add(2, 5);
-        // li.add(-2, 9);
-        // li.add(9, 19);
-        // li.print();
-        // System.out.println( "The size of list is: " + li.size);
-        // li.removeFirst();
-        // li.print();
+        LinkedList00 li = new LinkedList00();
+        li.print();
+        li.addFirst(2);
+        li.print();
+        li.addFirst(89);
+        li.print();
+        li.addLast(3);
+        li.print();
+        li.addLast(4);
+        li.add(2, 5);
+        li.add(-2, 9);
+        li.add(9, 19);
+        li.print();
+        System.out.println( "The size of list is: " + li.size);
+       int result = li.removeFirst();
+        li.print();
+        System.out.println(result);
         // li.removeLast();
         // li.print();
         // System.out.println(li.size);
@@ -304,12 +336,15 @@ public class LinkedList00 {
 
 
     //  making cycle linked list
-    head = new Node(1);
-    head.next = new Node(2);
-    head.next.next = new Node(3);
-    head.next.next.next = new Node(4);
-    head.next.next.next.next = head;
-    //  1->2->3->->4->1
-    System.out.println(isCycle());
+    // head = new Node(1);
+    // Node temp = new Node(2);
+    // head.next = temp;
+    // head.next.next = new Node(3);
+    // head.next.next.next = new Node(4);
+    // head.next.next.next.next = temp;
+    // //  1->2->3->->4->2
+    // System.out.println(isCycle());
+    // removeCycle();
+    // System.out.println(isCycle());
     }
 }
