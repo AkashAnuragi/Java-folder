@@ -15,8 +15,7 @@ public class Stack05 {
     }
 
    static void reverseStack( Stack<Integer> s ) {
-        if(s.isEmpty()){
-            //  s.push(data);
+        if(s.isEmpty());
              return;
         }
 
@@ -32,7 +31,7 @@ public class Stack05 {
         s.push(3);
         s.push(4);
 
-        // pushAtBottom(s,5);
+      
         
         reverseStack(s);
         System.out.println("Reverse Stack is: ");
