@@ -1,0 +1,131 @@
+
+
+                             project-root/
+                             │
+                             ├── node_modules/             # Dependencies (auto-generated)
+                             │
+                             ├── server/                   # Backend server-side code
+                             │   ├── middleware/
+                             │   │   └── auth.js
+                             │   │
+                             │   ├── models/
+                             │   │   ├── Message.js
+                             │   │   ├── Room.js
+                             │   │   └── User.js
+                             │   │
+                             │   ├── routes/
+                             │   │   ├── auth.js
+                             │   │   ├── messages.js
+                             │   │   ├── rooms.js
+                             │   │   ├── upload.js
+                             │   │   └── users.js
+                             │   │
+                             │   ├── uploads/
+                             │   │   ├── 1748332604093-3857... (uploaded file)
+                             │   │   └── index.js
+                             │   │
+                             │   └── socketHandlers.js
+                             │
+                             ├── src/                       # Frontend source files
+                             │
+                             ├── .gitignore
+                             ├── eslint.config.js
+                             ├── index.html
+                             ├── package-lock.json
+                             ├── package.json
+                             ├── postcss.config.js
+                             ├── tailwind.config.js
+                             ├── tsconfig.app.json
+                             ├── tsconfig.json
+                             ├── tsconfig.node.json
+                             ├── vite.config.ts
+
+
+                             mkdir Major project
+                             cd Major Project
+
+
+                             npm create vite@latest
+                              ✔ Project name: … project
+                              ✔ Select a framework: › React
+                              ✔ Select a variant: › TypeScript
+
+                                cd project
+                                npm install
+                                npm run dev
+
+
+      npm install --save-dev @eslint/js @types/react @types/react-dom
+      @vitejs/plugin-react autoprefixer eslint eslint-plugin-react-hooks
+      eslint-plugin-react-refresh globals postcss tailwindcss typescript typescript-eslint vite
+
+                       @tailwind base;
+                       @tailwind components;
+                       @tailwind utilities;
+
+
+                       project-root/
+                       ├── node_modules/
+                       ├── server/
+                       │
+                       ├── src/
+                       │   ├── components/
+                       │   │   ├── auth/
+                       │   │   │   └── ProtectedRoute.tsx
+                       │   │   ├── chat/
+                       │   │   │   ├── MessageInput.tsx
+                       │   │   │   ├── MessageItem.tsx
+                       │   │   │   ├── MessageList.tsx
+                       │   │   │   ├── RoomHeader.tsx
+                       │   │   │   ├── RoomInfoModal.tsx
+                       │   │   │   ├── ShareRoomModal.tsx
+                       │   │   │   └── TypingIndicator.tsx
+                       │   │   ├── layout/
+                       │   │   │   ├── Layout.tsx
+                       │   │   │   ├── MobileNavigation.tsx
+                       │   │   │   └── Sidebar.tsx
+                       │   │   ├── rooms/
+                       │   │   │    ├── CreateRoomModal.tsx
+                       │   │   │    └── RoomList.tsx
+                       │   │   └── ui/
+                       │   │       ├── LoadingSpinner.tsx
+                       │   │       └── Modal.tsx
+                       │   │
+                       │   │
+                       ├── config/
+                       │   └── constants.ts
+                       │
+                       ├── contexts/
+                       │   ├── AuthContext.tsx
+                       │   ├── ChatContext.tsx
+                       │   └── ThemeContext.tsx
+                       │
+                       ├── pages/
+                       │   ├── ChatHome.tsx
+                       │   ├── JoinRoom.tsx
+                       │   ├── Login.tsx
+                       │   ├── Profile.tsx
+                       │   ├── Register.tsx
+                       │   └── RoomView.tsx
+                       ├── App.tsx
+                       ├── main.ts
+                       ├── index.css
+                       ├── vite-env.d.ts
+                       ├── .gitignore
+                       ├── eslint.config.js
+                       ├── index.html
+                       ├── package-lock.json
+                       ├── package.json
+                       ├── postcss.config.js
+                       ├── tailwind.config.js
+                       ├── tsconfig.app.json
+                       ├── tsconfig.json
+                       ├── tsconfig.node.json
+                       ├── vite.config.ts
+
+
+
+
+
+
+

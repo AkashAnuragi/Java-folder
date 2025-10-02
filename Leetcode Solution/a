@@ -1,0 +1,34 @@
+
+
+                         my-app/
+                         ├─ node_modules/
+                         ├─ middleware/
+                         │  ├─ protect.js
+                         ├─ models/
+                         │  ├─ avatars.js
+                         │  ├─ messageModel.js
+                         │  ├─ userModel.js
+                         2
+                         How to create a real-time Chat Application with MERN Stack?
+                        │  ├─ tokenModel.js
+                         ├─ routes/
+                         │  ├─ avatarRoute.js
+                         │  ├─ userRoute.js
+                         ├─ utils/
+                         │  ├─ sendEmail.js
+                         ├─ controllers/
+                         │  ├─ registerController.js
+                         │  ├─ profileController.js
+                         │  ├─ peopleController.js
+                         │  ├─ loginController.js
+                         │  ├─ emailVerifyController.js
+                         │  ├─ avatarController.js
+                         │  ├─ messageController.js
+                         ├─ db/
+                         │  ├─ db.js
+                         ├─ .gitignore
+                         ├─ package.json
+                         ├─ package-lock.json
+                         ├─ index.js
+                         ├─ wsServer.j
+
